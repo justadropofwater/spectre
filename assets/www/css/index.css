@@ -1,81 +1,58 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-* {
-    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+
+/* header stuff */
+
+h1.ui-title {
+	font-family: 'Droid Sans', sans-serif;
+	font-size: 2em !important;
+	font-weight:900 !important;
+	margin: 0.2em 30% 0.3em !important;
+	font-style: italic;
 }
 
-body {
-    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
-    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
-    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
-    background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+.exit {
+	width: 40px !important;
+	height: 40px !important;
+	top: 5px !important;
+	right: 15px !important;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+.exit span span.ui-icon-signout::before {
+	margin-top: 8px;
+	margin-left: 0px;
+	font-size: 1.5em;
 }
 
-/* Landscape layout (with min-width) */
-@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
-    .app {
-        background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
-    }
+.exit span span.ui-icon {
+	background-color: transparent !important;
+	background: none !important;
+	border-radius: 0 !important;
+	height: 40px;
+	width: 40px;
 }
 
-h1 {
-    font-size:24px;
-    font-weight:normal;
-    margin:0px;
-    overflow:visible;
-    padding:0px;
-    text-align:center;
+/* event and progress bar stuff */
+.progress {
+	margin: 0 auto;
+	position:relative;
+	width: 100%;
+/* 	border: 1px solid #ddd; */
+	padding: 0;
+	border-radius: 6px;
+	min-height: 20px;
+}
+
+.percent {
+	width:0%;
+	padding: 0 !important;
+	margin: 0 !important;
+	height: 20px;
+	background: url('images/progress-bar.gif') !important;
+}
+
+.bar {
+	height: 20px;
+	position:absolute;
+	display:inline-block;
 }
 
 .event {
@@ -97,25 +74,180 @@ h1 {
     display:none;
 }
 
-@keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
-@-webkit-keyframes fade {
-    from { opacity: 1.0; }
-    50% { opacity: 0.4; }
-    to { opacity: 1.0; }
-}
- 
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
 
+/* icon stuff */
+
+.ui-navbar li .ui-btn-icon-bottom .ui-btn-inner {
+	padding-bottom: 50px;
+	margin-left: 0 !important;
+}
+
+.ui-icon {
+
+}
+
+.ui-mini .ui-btn-icon-bottom .ui-icon {
+	font-size: 2em;
+	width: 40px;
+	height: 40px;
+	bottom: 7px;
+	margin-left: -18px !important;
+}
+
+/* welcome screen */
+#load .ui-content {
+	padding: 0 !important;
+	margin-top: 3.5em;
+}
+
+#load div.ui-footer {
+	text-align: center;
+	margin: 0 auto;
+}
+
+.welcome {
+	text-align: center;
+	padding: 1em;
+}
+
+#loginForm {
+	padding: 1em;
+}
+
+#loginForm input.ui-input-text {
+	font-size: 18px;
+	color: white !important;
+}
+
+#loginButton {
+	text-align: center;
+	margin: 0 auto;
+	padding: 2em;
+}
+
+#registerNowButton span.ui-btn-inner {
+	padding-left: 0 !important;
+	padding: 11px 13px 11px 40px !important;
+	font-size: 16px;
+}
+
+.copyInfo {
+	font-weight: normal;
+	font-size: 10px;
+	padding: 0.5em;
+}
+
+/* register tabs */
+.register .ui-content {
+	padding: 0 !important;
+	margin-top: 3.5em;
+}
+
+.register {
+	font-weight: normal;
+	text-align: center;
+	font-size: 1em;
+}
+
+#registerProgress {
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* register device tab */
+
+#registerDeviceForm {
+	padding: 1em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.percent.device {
+	width: 25%;
+}
+
+/* register user tab */
+
+.percent.user {
+	width: 50%;
+}
+
+#registerUsernameForm, #registerPasswordForm {
+	padding: 1em;
+	text-align: center;
+	margin: 0 auto;
+}
+
+/* register knock */
+
+.percent.knock {
+	width: 75%;
+}
+
+/* register overview */
+
+.percent.overview {
+	width: 100%;
+}
+
+/* footer overrides */
+
+.mainFooter div ul li a span .ui-icon-cog::before {
+	margin-top: 8px;
+	margin-left: 8px;
+}
+
+.mainFooter div ul li a span .ui-icon-envelope::before {
+	margin-top: 7px;
+	margin-left: 6px;
+}
+
+.mainFooter div ul li a span .ui-icon-group::before {
+	margin-top: 8px;
+	margin-left: 6px;
+}
+
+/* account tab */
+
+#account div.ui-content {
+	padding: 4em 15px;
+}
+
+.acount-info div {
+	max-height: 160px;
+}
+
+.account-info div #avatar {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+}
+
 img.avatar {
-	max-width: 136px;
+	max-width: 125px;
+	max-height: 125px;
+	margin: 1em 0;
+}
+
+.account-info div div.text {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	min-height: 157px;
+	font-size: 1em;
+	font-weight: normal;
+}
+
+.account-info .accountUserName {
+	text-align: center;
+	width: 100%;
+	font-weight: 600;
+	font-size: 1.25em;
+	color: #1a8bFF;
 }
 
 .ui-field-contain label.ui-slider {
@@ -131,4 +263,181 @@ img.avatar {
 
 #slider-3-label {
 	width: 100%;
+}
+
+/* messages tab */
+#messages .ui-content {
+	margin-top: 3.5em;
+	padding: 0 !important;
+}
+
+#messages .ui-li-static.ui-li-has-arrow.ui-li-has-count {
+	padding-right: 15px !important;
+}
+
+#messagesBoxes {
+	margin-top: 2em;
+}
+
+#messages .ui-btn-up-a {
+border-width: 0 0 1px 1px;
+}
+
+#messages .ui-navbar ul li a span .ui-icon {
+	background-color: transparent !important;
+	border: 0;
+}
+
+#messages .ui-navbar ul li a span .ui-icon-shadow {
+	-moz-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	-webkit-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+}
+
+#messages .ui-navbar ul li a span .ui-icon-edit::before {
+	margin-top: 4px;
+	margin-left: 5px;
+}
+
+#messages .ui-navbar ui li a span .ui-icon-search::before {
+	margin-top: 3px;
+	margin-left: 2px;
+}
+
+/* inbox page */
+
+#inbox .ui-content {
+	margin-top: 3.5em;
+}
+
+#inbox .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+#inbox .ui-header .ui-btn-left span .ui-icon-arrow-l::before {
+	margin-top: 4px !important;
+	margin-left: 4px !important;
+}
+
+/* outbox page */
+
+#outbox .ui-content {
+	margin-top: 3.5em;
+}
+
+#outbox .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+/* drafts page */
+#drafts .ui-content {
+	margin-top: 3.5em;
+}
+
+#drafts .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+/* sent page */
+#sent .ui-content {
+	margin-top: 3.5em;
+}
+
+#sent .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+/* trash page  */
+#trash .ui-content {
+	margin-top: 3.5em;
+}
+
+#trash .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+/* write message */
+#messageNew .ui-content {
+	margin: 3.5em 0 0 0 !important;
+}
+
+#messageNew .ui-header .ui-btn-left {
+	top: 11px;
+	left: 15px;
+}
+
+#messageNew .ui-header .ui-btn-left span .ui-icon-arrow-l::before {
+	margin-top: 4px !important;
+	margin-left: 4px !important;
+}
+
+#messageNewForm div.ui-input-text {
+	width: 65%;
+	float: left;
+	margin: 0 0 0 10px;
+}
+
+#messageNewFormToLabel {
+	float: left;
+	padding: 0;
+	margin: 0.5em 0 0 2px;
+}
+
+#messageNewForm div.ui-select {
+	width: 20%;
+	float: right;
+	margin: 0;
+	padding: 0;
+}
+
+#messageNewForm div.ui-select .ui-btn {
+	margin: 0;
+	padding: 0;
+}
+
+#messageNewForm div.ui-select .ui-btn .ui-btn-inner {
+	height: 70px;
+	width: 70px;
+	padding: 0;
+}
+#messageNewForm div.ui-select .ui-btn .ui-btn-inner .ui-btn-text {
+	display: none;
+}
+
+#messageNewForm div.ui-select .ui-btn .ui-btn-inner .ui-icon {
+	height: 70px;
+	width: 70px;
+	right: 0;
+	top: 0;
+	margin-top: 0;
+	background-image: url('images/cordova.png');
+	background-color: transparent;
+	background-position: 7px 7px;
+	background-size: contain;
+}
+
+#messageNewFormToolbar {
+	padding: 0 0 10px 0;
+	margin: 10px 0 0 6px;
+	float: left;
+}
+
+#messageNewFormToolbar .ui-controlgroup .ui-controlgroup-controls a span span.ui-btn-text {
+	font-size: 11px;
+}
+
+#messageNewFormMessage {
+	clear: both;
+	margin: 10px 0 0 0;
+}
+
+/* contact tab */
+
+#contacts .ui-content {
+	padding: 4.5em 0 0 0;
 }
