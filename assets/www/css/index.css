@@ -1,23 +1,24 @@
+/* start global overrides */
 
 /* header stuff */
 
 h1.ui-title {
 	font-family: 'Droid Sans', sans-serif;
-	font-size: 2em !important;
+	font-size: 1.75em !important;
 	font-weight:900 !important;
 	margin: 0.2em 30% 0.3em !important;
 	font-style: italic;
 }
 
 .exit {
-	width: 40px !important;
-	height: 40px !important;
+	width: 30px !important;
+	height: 30px !important;
 	top: 5px !important;
 	right: 15px !important;
 }
 
 .exit span span.ui-icon-signout::before {
-	margin-top: 8px;
+	margin-top: 4px;
 	margin-left: 0px;
 	font-size: 1.5em;
 }
@@ -26,8 +27,8 @@ h1.ui-title {
 	background-color: transparent !important;
 	background: none !important;
 	border-radius: 0 !important;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 }
 
 /* event and progress bar stuff */
@@ -55,28 +56,9 @@ h1.ui-title {
 	display:inline-block;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
-
 .blink {
-    animation:fade 3000ms infinite;
-    -webkit-animation:fade 3000ms infinite;
+	animation:fade 3000ms infinite;
+	-webkit-animation:fade 3000ms infinite;
 }
 
 /* icon stuff */
@@ -98,10 +80,30 @@ h1.ui-title {
 	margin-left: -18px !important;
 }
 
-/* welcome screen */
+/* avatar stuff */
+.avatarContainer {
+	margin: 0 auto;
+	text-align: center;
+}
+
+img.avatar {
+	max-width: 125px;
+	max-height: 100px;
+	margin: 1em 0;
+}
+
+/* dialog stuff */
+.closeX {
+	display: none;
+}
+
+/* end global overrides */
+
+/*start page specific overrides */
+
+/* load screen */
 #load .ui-content {
 	padding: 0 !important;
-	margin-top: 3.5em;
 }
 
 #load div.ui-footer {
@@ -127,6 +129,20 @@ h1.ui-title {
 	text-align: center;
 	margin: 0 auto;
 	padding: 2em;
+}
+
+#loginSubmitButton span span {
+	background-color: transparent !important;
+}
+
+#loadUserResponseDialog .ui-content {
+	margin: 0 !important;
+	padding: 15px !important;
+	text-align: center;
+}
+
+#loadUserResponseDialog .closeBtn {
+	margin: 15px;
 }
 
 #registerNowButton span.ui-btn-inner {
@@ -212,49 +228,77 @@ h1.ui-title {
 }
 
 /* account tab */
+#account .ui-navbar ul li a span .ui-icon-shadow {
+	-moz-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	-webkit-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+}
+
+#account .ui-navbar ul li a span .ui-icon {
+	background-color: transparent !important;
+	border: 0;
+}
 
 #account div.ui-content {
-	padding: 4em 15px;
+	padding: 0 !important;
 }
 
 .acount-info div {
 	max-height: 160px;
 }
 
-.account-info div #avatar {
+.account-info div .avatarContainer {
 	margin: 0 auto;
 	width: auto;
 	text-align: center;
-}
-
-img.avatar {
-	max-width: 125px;
-	max-height: 125px;
-	margin: 1em 0;
 }
 
 .account-info div div.text {
 	width: 100%;
 	padding: 0;
 	margin: 0;
-	min-height: 157px;
+	min-height: 136px;
 	font-size: 1em;
 	font-weight: normal;
 }
 
+.account-info div div.text span {
+	margin: 5px 0 0;
+	float: left;
+	clear: both;
+}
+
 .account-info .accountUserName {
-	text-align: center;
 	width: 100%;
 	font-weight: 600;
-	font-size: 1.25em;
+	font-size: 1.2em;
 	color: #1a8bFF;
 }
 
 .ui-field-contain label.ui-slider {
 	width: 70%;
-	margin: 0 10% 1% 0;	
+	margin: 0 10% 1% 0;
 }	
 
+.ui-field-contain label#toggleNuke-label {
+	width: 100%;
+	margin: 0 10% 1% 0;
+}	
+
+.ui-field-contain div.ui-slider input#toggleNuke {
+	display: none;
+}
+
+.ui-field-contain div.ui-slider div.ui-slider-track {
+	margin: 0 0 0 15px !important;
+}
+#options {
+	padding: 0 15px;
+}
+
+#options .ui-field-contain {
+	max-width: auto !important;
+}
 #options div div.ui-slider-switch {
 	top: 1em;
 	right: 1px;
@@ -267,7 +311,6 @@ img.avatar {
 
 /* messages tab */
 #messages .ui-content {
-	margin-top: 3.5em;
 	padding: 0 !important;
 }
 
@@ -302,6 +345,10 @@ border-width: 0 0 1px 1px;
 #messages .ui-navbar ui li a span .ui-icon-search::before {
 	margin-top: 3px;
 	margin-left: 2px;
+}
+
+#messagesSearch .ui-panel-inner {
+	margin: 3.5em 0 0;
 }
 
 /* inbox page */
@@ -439,5 +486,109 @@ border-width: 0 0 1px 1px;
 /* contact tab */
 
 #contacts .ui-content {
-	padding: 4.5em 0 0 0;
+	padding: 0 !important;
+}
+
+#contacts .ui-navbar ul li a span .ui-icon-shadow {
+	-moz-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	-webkit-box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+	box-shadow: 0px 0px 0 rgba(255,255,255,0) /*{global-icon-shadow}*/;
+}
+
+#contacts .ui-navbar ul li a span .ui-icon {
+	background-color: transparent !important;
+	border: 0;
+}
+
+#contacts .ui-content .ui-listview-filter {
+	margin: 0px 0px 15px;
+}
+
+/* user detail tab */
+#user .ui-content {
+	padding: 0 !important;
+}
+
+#user .ui-content div div div div .text {
+	min-height: 140px;
+	max-height: 140px;
+}
+
+.user-info div .avatarContainer {
+	margin: 0 auto;
+	width: auto;
+	text-align: center;
+	min-height: 140px;
+}
+
+.user-info div div.text span {
+	margin: 5px 0 0;
+	float: left;
+	clear: both;
+}
+
+.user-info .userNameRecipient {
+	width: 100%;
+	font-weight: 600;
+	font-size: 1.2em;
+	color: #1a8bFF;
+}
+
+#user .ui-content .ui-listview-filter {
+	padding: 10px 10px 0;
+}
+
+#user .ui-content .ui-listview li div.getMessagesResponseNull {
+	min-height: 200px;
+	padding: 15px;
+}
+
+#userNewMessageForm {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+#userNewMessageInput {
+	width: 80%;
+	float: left;
+	padding: 5px;
+}
+
+#userNewMessageSubmitButton {
+	width: auto;
+	position: relative;
+	float: right;
+	height: 100%;
+	padding: 5px;
+}
+
+#userNewMessageSubmitButton a {
+	margin: 0.55em 0;
+} 
+#userNewMessageSubmitButton a span.ui-btn-inner {
+	padding: 0 !important;
+	height: 100%;
+	width: 100%;
+	margin: 0 !important;
+	min-height: 45px;
+	min-width: 50px;
+}
+
+#userNewMessageSubmitButton a span span.ui-icon {
+	width: 100%;
+	min-width: 45px;
+	min-height: 100%;
+	top: 0.5em;
+	left: 0;
+	bottom: 0;
+	right: 0.5em;
+	padding: 22%;
+	margin: 0 auto !important;
+	position: relative;
+}
+
+#userNewMessageSubmitButton a span span.ui-icon-comment::before {
+	font-size: 2em;
+	margin-top: 0px !impportant;
+	margin-left: 0px !important;
 }

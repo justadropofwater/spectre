@@ -1,5 +1,4 @@
-$('#registerStart').live( 'pageinit',function(event){
-
+$('#registerStart').on('pageinit',function(event){
 	$("#registerName").val(deviceName);
 	console.log(deviceName);
 	$("#registerModel").val(deviceModel);
@@ -10,5 +9,4 @@ $('#registerStart').live( 'pageinit',function(event){
 	console.log(deviceOSVersion);
 	$("#registerUUID").val(deviceUUID);
 	console.log(deviceUUID);
-
 });

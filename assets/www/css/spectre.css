@@ -512,7 +512,7 @@
 .ui-body-d,
 .ui-overlay-d {
 	border: 1px solid #1a87ff /*{d-body-border}*/;
-	color: #000000 /*{d-body-color}*/;
+	color: #fff /*{d-body-color}*/;
 	text-shadow: 0 /*{d-body-shadow-x}*/ 0px /*{d-body-shadow-y}*/ 0 /*{d-body-shadow-radius}*/ #ffffff /*{d-body-shadow-color}*/;
 	background: #1a87ff /*{d-body-background-color}*/;
 	background-image: -webkit-gradient(linear, left top, left bottom, from( #1985fc /*{d-body-background-start}*/), to( #1a88FF /*{d-body-background-end}*/)); /* Saf4+, Chrome */

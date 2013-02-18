@@ -1,5 +1,4 @@
-$('#messageNew').live('pagecreate',function(event){
-
+$('#messageNew').on('pagecreate',function(event){
 	$(function(){
 		$('#messageNewContacts').mobiscroll().select({
 				theme: 'android-ics light',
